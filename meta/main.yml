@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  role_name: hello-world
+  author: Wellington Ozorio
+  description: Create a Docker container running the app tutum/hello-world
+
+dependencies:
+  - src: https://github.com/wozorio/ansible-role-docker
+    name: docker

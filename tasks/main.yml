@@ -1,0 +1,18 @@
+---
+- name: Pull "{{ container_image }}" Docker image
+  docker_image:
+    name: "{{ container_image }}"
+    tls_hostname: localhost
+    source: pull
+
+- name: Create "{{ container_image }}" Docker container
+  docker_container:
+    name: "{{ container_name }}-{{ item }}"
+    tls_hostname: localhost
+    container_default_behavior: no_defaults
+    image: "{{ container_image }}"
+    state: "{{ container_state }}"
+    ports:
+      - "{{ container_port }}"
+    restart_policy: "{{ container_restart_policy }}"
+  with_sequence: count={{ create_containers }}
