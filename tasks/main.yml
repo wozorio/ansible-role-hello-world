@@ -9,7 +9,7 @@
   docker_container:
     name: "{{ container_name }}-{{ item }}"
     tls_hostname: localhost
-    container_default_behavior: no_defaults
+    container_default_behavior: compatibility
     image: "{{ container_image }}"
     state: "{{ container_state }}"
     ports:
