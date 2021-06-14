@@ -1,7 +1,6 @@
 ---
-create_containers: 1
-container_name: hello-world
-container_image: tutum/hello-world
-container_port: 80:80
-container_state: started
-container_restart_policy: always
+hello_world_container_name: hello-world
+hello_world_container_image: tutum/hello-world
+hello_world_container_port: 80:80
+hello_world_container_state: started
+hello_world_container_restart_policy: always
