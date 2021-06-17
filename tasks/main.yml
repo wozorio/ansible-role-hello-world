@@ -1,7 +1,7 @@
 ---
 - name: Pull Docker image
   docker_image:
-    name: "{{ hello_world_container_image }}"
+    name: "{{ hello_world_image_name }}"
     tls_hostname: localhost
     source: pull
 
@@ -9,7 +9,7 @@
   docker_container:
     name: "{{ hello_world_container_name }}"
     tls_hostname: localhost
-    image: "{{ hello_world_container_image }}"
+    image: "{{ hello_world_image_name }}"
     state: "{{ hello_world_container_state }}"
     ports:
       - "{{ hello_world_container_port }}"
